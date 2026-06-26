@@ -56,7 +56,7 @@ cd ..
 #change version of pyflink
 cd flink-python/pyflink
 perl -pi -e "s#^__version__ = \".*\"#__version__ = \"${NEW_VERSION}\"#" version.py
-perl -pi -e "s#-SNAPSHOT#\\.dev0#" version.py
+perl -pi -e "s#-SNAPSHOT#\\.dev1#" version.py
 cd ../..
 
 git commit -am "Update version to $NEW_VERSION"

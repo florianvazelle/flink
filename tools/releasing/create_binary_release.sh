@@ -83,7 +83,7 @@ make_binary_release() {
 }
 
 make_python_release() {
-  PYFLINK_VERSION=${RELEASE_VERSION/-SNAPSHOT/.dev0}
+  PYFLINK_VERSION=${RELEASE_VERSION/-SNAPSHOT/.dev1}
   cd flink-python/
   # use lint-python.sh script to create a python environment.
   dev/lint-python.sh -s basic
