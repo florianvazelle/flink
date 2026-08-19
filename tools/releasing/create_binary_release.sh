@@ -64,7 +64,7 @@ make_binary_release() {
   dir_name="flink-$RELEASE_VERSION-bin-scala_${DEFAULT_SCALA_VERSION}"
 
   # enable release profile here (to check for the maven version)
-  $MVN clean package -Prelease -pl flink-dist -am -Dgpg.skip -Dcheckstyle.skip=true -DskipTests
+  $MVN clean package -Prelease -pl flink-dist -am -Dgpg.skip -Dcheckstyle.skip=true -DskipTests -e
 
   cd flink-dist/target/flink-${RELEASE_VERSION}-bin
   ${FLINK_DIR}/tools/releasing/collect_license_files.sh ./flink-${RELEASE_VERSION} ./flink-${RELEASE_VERSION}
@@ -83,7 +83,7 @@ make_binary_release() {
 }
 
 make_python_release() {
-  PYFLINK_VERSION=${RELEASE_VERSION/-SNAPSHOT/.dev1}
+  PYFLINK_VERSION=${RELEASE_VERSION/-SNAPSHOT/.dev2}
   cd flink-python/
   # use lint-python.sh script to create a python environment.
   dev/lint-python.sh -s basic
